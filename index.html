@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VIP Gaming Zone</title>
+<meta name="description" content="VIP Gaming Zone - Premium Game Directory">
 
 <style>
 *{
@@ -13,20 +14,24 @@
 
 body{
   margin:0;
-  background:
-    radial-gradient(circle at 50% 0%,#3b2900 0%,transparent 35%),
-    linear-gradient(180deg,#080808,#020202);
-  color:white;
+  color:#fff;
   font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,#4b3200 0%,transparent 35%),
+    linear-gradient(180deg,#080808,#020202);
+}
+
+a{
+  text-decoration:none;
 }
 
 header{
   position:sticky;
   top:0;
-  z-index:20;
+  z-index:100;
   background:rgba(5,5,5,.96);
   border-bottom:1px solid #80600d;
-  padding:13px;
+  padding:13px 15px;
 }
 
 .nav{
@@ -42,6 +47,7 @@ header{
   color:#ffdf72;
   font-size:21px;
   font-weight:900;
+  letter-spacing:1px;
 }
 
 .brand small{
@@ -53,9 +59,14 @@ header{
 }
 
 .telegram{
-  text-decoration:none;
+  display:inline-block;
   color:#111;
-  background:linear-gradient(90deg,#c9941a,#ffe47d,#c9941a);
+  background:linear-gradient(
+    90deg,
+    #c9941a,
+    #ffe47d,
+    #c9941a
+  );
   padding:10px 15px;
   border-radius:30px;
   font-weight:900;
@@ -67,6 +78,7 @@ header{
   padding:15px;
 }
 
+/* HOME */
 .hero{
   overflow:hidden;
   border:1px solid #80600d;
@@ -76,9 +88,8 @@ header{
 }
 
 .hero img{
-  display:block;
   width:100%;
-  height:auto;
+  display:block;
 }
 
 .hero-text{
@@ -87,24 +98,28 @@ header{
   color:#bbb;
 }
 
+/* TITLES */
 h2{
   text-align:center;
   color:#ffdf72;
   margin:28px 0 16px;
 }
 
+/* GAME GRID */
 .games{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:15px;
 }
 
+/* CARD */
 .game{
   text-align:center;
   padding:15px;
   border-radius:18px;
   border:1px solid #574108;
-  background:linear-gradient(145deg,#181818,#090909);
+  background:
+    linear-gradient(145deg,#191919,#080808);
   box-shadow:0 10px 30px #000;
   transition:.25s;
 }
@@ -114,14 +129,17 @@ h2{
   border-color:#f6c84a;
 }
 
+/* LOGO */
 .logo{
   width:90px;
   height:90px;
   object-fit:contain;
+  padding:5px;
   background:#050505;
   border:2px solid #f6c84a;
   border-radius:20px;
-  padding:5px;
+  box-shadow:
+    0 0 18px rgba(246,200,74,.20);
 }
 
 .game h3{
@@ -136,17 +154,38 @@ h2{
   margin-bottom:12px;
 }
 
-.details-btn{
-  border:0;
+/* BUTTONS */
+.details-btn,
+.play-btn{
   width:100%;
+  border:0;
   cursor:pointer;
   padding:11px;
   border-radius:10px;
-  background:linear-gradient(90deg,#c9941a,#ffe47d,#c9941a);
-  color:#111;
   font-weight:900;
+  font-size:13px;
 }
 
+.details-btn{
+  background:#1b1b1b;
+  color:#ffdf72;
+  border:1px solid #6c4b08;
+}
+
+.play-btn{
+  display:block;
+  margin-top:9px;
+  color:#111;
+  background:
+    linear-gradient(
+      90deg,
+      #c9941a,
+      #ffe47d,
+      #c9941a
+    );
+}
+
+/* DETAILS */
 .info{
   display:none;
   margin-top:12px;
@@ -156,22 +195,30 @@ h2{
   border-radius:12px;
   color:#bbb;
   font-size:13px;
-  line-height:1.5;
+  line-height:1.6;
+  text-align:left;
 }
 
 .info.active{
   display:block;
 }
 
+/* TELEGRAM */
 .telegram-box{
   margin-top:30px;
   padding:25px;
   text-align:center;
   border:1px solid #604808;
   border-radius:20px;
-  background:linear-gradient(145deg,#171209,#090909);
+  background:
+    linear-gradient(145deg,#171209,#090909);
 }
 
+.telegram-box p{
+  color:#aaa;
+}
+
+/* FOOTER */
 footer{
   text-align:center;
   color:#666;
@@ -181,20 +228,37 @@ footer{
   margin-top:30px;
 }
 
+/* TABLET */
 @media(max-width:800px){
+
   .games{
     grid-template-columns:repeat(2,1fr);
   }
+
 }
 
+/* MOBILE */
 @media(max-width:430px){
+
   .brand{
     font-size:17px;
+  }
+
+  .brand small{
+    font-size:8px;
   }
 
   .telegram{
     padding:8px 10px;
     font-size:11px;
+  }
+
+  .container{
+    padding:10px;
+  }
+
+  .games{
+    gap:10px;
   }
 
   .game{
@@ -209,13 +273,25 @@ footer{
   .game h3{
     font-size:16px;
   }
+
+  .vip{
+    font-size:9px;
+  }
+
+  .details-btn,
+  .play-btn{
+    font-size:11px;
+    padding:10px 5px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
+
   <div class="nav">
 
     <div class="brand">
@@ -223,94 +299,448 @@ footer{
       <small>PREMIUM GAME DIRECTORY</small>
     </div>
 
-    <a class="telegram"
-       href="https://t.me/+10oVqeoJfLk0ZWVl"
-       target="_blank">
-       ✈ JOIN TELEGRAM
+    <a
+      class="telegram"
+      href="https://t.me/+10oVqeoJfLk0ZWVl"
+      target="_blank"
+      rel="noopener">
+      ✈ JOIN TELEGRAM
     </a>
 
   </div>
+
 </header>
 
 
 <main class="container">
 
-  <!-- HOME -->
-  <section class="hero">
 
-    <!-- Upload home-vip-poster.jpg in same folder as index.html -->
-    <img src="home-vip-poster.jpg"
-         alt="VIP Gaming Zone">
+<!-- ================= HOME ================= -->
 
-    <div class="hero-text">
-      🎮 Explore our featured gaming platforms
-    </div>
+<section class="hero">
 
-  </section>
+  <!--
+  Keep home-vip-poster.jpg
+  in the same folder as index.html
+  -->
 
+  <img
+    src="home-vip-poster.jpg"
+    alt="VIP Gaming Zone">
 
-  <h2>👑 VIP GAME COLLECTION</h2>
+  <div class="hero-text">
+    🎮 Explore Our Featured Gaming Collection
+  </div>
 
-
-  <section class="games">
-
-
-    <!-- IV7 -->
-    <article class="game">
-
-      <img class="logo"
-           src="iv7-vip.png"
-           alt="IV7">
-
-      <h3>IV7</h3>
-
-      <div class="vip">
-        ★ VIP PLATFORM ★
-      </div>
-
-      <button class="details-btn"
-              onclick="showInfo('iv7')">
-        VIEW DETAILS
-      </button>
-
-      <div id="iv7" class="info">
-        🎮 Featured gaming platform<br>
-        ⭐ VIP collection entry<br>
-        📱 Mobile friendly
-      </div>
-
-    </article>
+</section>
 
 
-    <!-- IN7 -->
-    <article class="game">
+<!-- ================= GAMES ================= -->
 
-      <img class="logo"
-           src="in7-vip.png"
-           alt="IN7">
-
-      <h3>IN7</h3>
-
-      <div class="vip">
-        ★ VIP PLATFORM ★
-      </div>
-
-      <button class="details-btn"
-              onclick="showInfo('in7')">
-        VIEW DETAILS
-      </button>
-
-      <div id="in7" class="info">
-        🎮 Featured gaming platform<br>
-        ⭐ VIP collection entry<br>
-        📱 Mobile friendly
-      </div>
-
-    </article>
+<h2>👑 VIP GAME COLLECTION</h2>
 
 
-    <!-- IX7 -->
-    <article class="game">
+<section class="games">
 
-      <img class="logo"
-          
+
+<!-- 1. RAJA7 -->
+
+<article class="game">
+
+  <img
+    class="logo"
+    src="raja7-vip.png"
+    alt="Raja7">
+
+  <h3>Raja7</h3>
+
+  <div class="vip">
+    ★ VIP PLATFORM ★
+  </div>
+
+  <button
+    class="details-btn"
+    onclick="showInfo('raja7')">
+    VIEW DETAILS
+  </button>
+
+  <div
+    id="raja7"
+    class="info">
+
+    🎮 Featured gaming platform<br>
+    ⭐ VIP collection entry<br>
+    📱 Mobile-friendly experience<br>
+    🔔 Check the platform's current terms
+
+  </div>
+
+  <!-- Replace # with a lawful/free-to-play URL -->
+  <a
+    class="play-btn"
+    href="#"
+    onclick="return false;">
+    PLAY NOW
+  </a>
+
+</article>
+
+
+<!-- 2. BENZ -->
+
+<article class="game">
+
+  <img
+    class="logo"
+    src="benz-vip.png"
+    alt="Benz">
+
+  <h3>Benz</h3>
+
+  <div class="vip">
+    ★ VIP PLATFORM ★
+  </div>
+
+  <button
+    class="details-btn"
+    onclick="showInfo('benz')">
+    VIEW DETAILS
+  </button>
+
+  <div
+    id="benz"
+    class="info">
+
+    🎮 Featured gaming platform<br>
+    ⭐ VIP collection entry<br>
+    📱 Mobile-friendly experience<br>
+    🔔 Check the platform's current terms
+
+  </div>
+
+  <a
+    class="play-btn"
+    href="#"
+    onclick="return false;">
+    PLAY NOW
+  </a>
+
+</article>
+
+
+<!-- 3. MGM -->
+
+<article class="game">
+
+  <img
+    class="logo"
+    src="mgm-vip.png"
+    alt="MGM">
+
+  <h3>MGM</h3>
+
+  <div class="vip">
+    ★ VIP PLATFORM ★
+  </div>
+
+  <button
+    class="details-btn"
+    onclick="showInfo('mgm')">
+    VIEW DETAILS
+  </button>
+
+  <div
+    id="mgm"
+    class="info">
+
+    🎮 Featured gaming platform<br>
+    ⭐ VIP collection entry<br>
+    📱 Mobile-friendly experience<br>
+    🔔 Check the platform's current terms
+
+  </div>
+
+  <a
+    class="play-btn"
+    href="#"
+    onclick="return false;">
+    PLAY NOW
+  </a>
+
+</article>
+
+
+<!-- 4. IN7 -->
+
+<article class="game">
+
+  <img
+    class="logo"
+    src="in7-vip.png"
+    alt="IN7">
+
+  <h3>IN7</h3>
+
+  <div class="vip">
+    ★ VIP PLATFORM ★
+  </div>
+
+  <button
+    class="details-btn"
+    onclick="showInfo('in7')">
+    VIEW DETAILS
+  </button>
+
+  <div
+    id="in7"
+    class="info">
+
+    🎮 Featured gaming platform<br>
+    ⭐ VIP collection entry<br>
+    📱 Mobile-friendly experience<br>
+    🔔 Check the platform's current terms
+
+  </div>
+
+  <a
+    class="play-btn"
+    href="#"
+    onclick="return false;">
+    PLAY NOW
+  </a>
+
+</article>
+
+
+<!-- 5. IX7 -->
+
+<article class="game">
+
+  <img
+    class="logo"
+    src="ix7-vip.png"
+    alt="IX7">
+
+  <h3>IX7</h3>
+
+  <div class="vip">
+    ★ VIP PLATFORM ★
+  </div>
+
+  <button
+    class="details-btn"
+    onclick="showInfo('ix7')">
+    VIEW DETAILS
+  </button>
+
+  <div
+    id="ix7"
+    class="info">
+
+    🎮 Featured gaming platform<br>
+    ⭐ VIP collection entry<br>
+    📱 Mobile-friendly experience<br>
+    🔔 Check the platform's current terms
+
+  </div>
+
+  <a
+    class="play-btn"
+    href="#"
+    onclick="return false;">
+    PLAY NOW
+  </a>
+
+</article>
+
+
+<!-- 6. IV7 -->
+
+<article class="game">
+
+  <img
+    class="logo"
+    src="iv7-vip.png"
+    alt="IV7">
+
+  <h3>IV7</h3>
+
+  <div class="vip">
+    ★ VIP PLATFORM ★
+  </div>
+
+  <button
+    class="details-btn"
+    onclick="showInfo('iv7')">
+    VIEW DETAILS
+  </button>
+
+  <div
+    id="iv7"
+    class="info">
+
+    🎮 Featured gaming platform<br>
+    ⭐ VIP collection entry<br>
+    📱 Mobile-friendly experience<br>
+    🔔 Check the platform's current terms
+
+  </div>
+
+  <a
+    class="play-btn"
+    href="#"
+    onclick="return false;">
+    PLAY NOW
+  </a>
+
+</article>
+
+
+<!-- 7. IC7 -->
+
+<article class="game">
+
+  <img
+    class="logo"
+    src="ic7-vip.png"
+    alt="IC7">
+
+  <h3>IC7</h3>
+
+  <div class="vip">
+    ★ VIP PLATFORM ★
+  </div>
+
+  <button
+    class="details-btn"
+    onclick="showInfo('ic7')">
+    VIEW DETAILS
+  </button>
+
+  <div
+    id="ic7"
+    class="info">
+
+    🎮 Featured gaming platform<br>
+    ⭐ VIP collection entry<br>
+    📱 Mobile-friendly experience<br>
+    🔔 Check the platform's current terms
+
+  </div>
+
+  <a
+    class="play-btn"
+    href="#"
+    onclick="return false;">
+    PLAY NOW
+  </a>
+
+</article>
+
+
+<!-- 8. EK1 -->
+
+<article class="game">
+
+  <img
+    class="logo"
+    src="ek1-vip.png"
+    alt="EK1">
+
+  <h3>EK1</h3>
+
+  <div class="vip">
+    ★ VIP PLATFORM ★
+  </div>
+
+  <button
+    class="details-btn"
+    onclick="showInfo('ek1')">
+    VIEW DETAILS
+  </button>
+
+  <div
+    id="ek1"
+    class="info">
+
+    🎮 Featured gaming platform<br>
+    ⭐ VIP collection entry<br>
+    📱 Mobile-friendly experience<br>
+    🔔 Check the platform's current terms
+
+  </div>
+
+  <a
+    class="play-btn"
+    href="#"
+    onclick="return false;">
+    PLAY NOW
+  </a>
+
+</article>
+
+
+</section>
+
+
+<!-- ================= TELEGRAM ================= -->
+
+<section class="telegram-box">
+
+  <h2>✈️ JOIN OUR TELEGRAM</h2>
+
+  <p>
+    Get the latest gaming updates and announcements.
+  </p>
+
+  <a
+    class="telegram"
+    href="https://t.me/+10oVqeoJfLk0ZWVl"
+    target="_blank"
+    rel="noopener">
+    JOIN TELEGRAM
+  </a>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  © 2026 VIP Gaming Zone
+
+</footer>
+
+
+<script>
+
+function showInfo(id){
+
+  const box = document.getElementById(id);
+
+  if(box.classList.contains("active")){
+
+    box.classList.remove("active");
+
+  }else{
+
+    document
+      .querySelectorAll(".info")
+      .forEach(function(item){
+
+        item.classList.remove("active");
+
+      });
+
+    box.classList.add("active");
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
