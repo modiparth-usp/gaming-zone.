@@ -1,148 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VIP Gaming Zone</title>
-<meta name="description" content="VIP Gaming Zone - gaming app directory">
+<meta name="theme-color" content="#080808">
 <style>
-:root{
-  --gold:#f6c84a; --gold2:#ffdf72; --bg:#070707; --card:#111;
-  --muted:#b9b9b9; --line:#3b2a09;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;background:
-  radial-gradient(circle at 50% -10%,#3b2500 0,transparent 35%),
-  linear-gradient(#080808,#050505);color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
-}
-a{text-decoration:none;color:inherit}
-header{
-  position:sticky;top:0;z-index:10;
-  background:rgba(5,5,5,.94);backdrop-filter:blur(12px);
-  border-bottom:1px solid #6c4b08;padding:14px 16px;
-}
-.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{font-weight:900;font-size:22px;letter-spacing:1px;color:var(--gold2)}
-.brand small{display:block;font-size:10px;letter-spacing:3px;color:#aaa}
-.tg{border:1px solid var(--gold);padding:10px 14px;border-radius:999px;color:#111;background:linear-gradient(90deg,var(--gold),#fff0a0,var(--gold));font-weight:900}
-.wrap{max-width:1100px;margin:auto;padding:18px 14px 55px}
-.hero{border:1px solid #6f500b;border-radius:22px;overflow:hidden;box-shadow:0 15px 45px #000;margin-bottom:24px}
-.hero img{display:block;width:100%;height:auto}
-.heroNote{padding:14px;text-align:center;background:#0c0c0c;color:#cfcfcf;font-size:13px}
-h2{color:var(--gold2);text-align:center;margin:25px 0 16px}
-.games{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.game{
-  background:linear-gradient(145deg,#171717,#0a0a0a);
-  border:1px solid #5a4109;border-radius:18px;padding:15px;
-  text-align:center;box-shadow:0 10px 28px #000;transition:.25s;
-}
-.game:hover{transform:translateY(-5px);border-color:var(--gold)}
-.logo{
-  width:88px;height:88px;object-fit:cover;border-radius:20px;
-  border:2px solid var(--gold);box-shadow:0 0 18px rgba(246,200,74,.2);
-}
-.game h3{margin:11px 0 4px;font-size:18px}
-.vip{font-size:11px;color:var(--gold2);letter-spacing:2px;margin-bottom:12px}
-.btn{
-  display:block;padding:11px;border-radius:10px;
-  background:linear-gradient(90deg,#c9941a,#ffe07a,#c9941a);
-  color:#080808;font-weight:900;
-}
-.details{
-  margin-top:25px;background:#0d0d0d;border:1px solid #493506;
-  border-radius:18px;padding:18px;
-}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.stat{background:#151515;border:1px solid #30240c;border-radius:12px;padding:14px;text-align:center}
-.stat b{display:block;color:var(--gold2);font-size:18px;margin-bottom:5px}
-.stat span{color:#aaa;font-size:12px}
-.offer{margin-top:14px;padding:14px;border-radius:12px;background:#130f05;border:1px solid #5a4109;color:#ddd}
-.offer strong{color:var(--gold2)}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.gallery img{width:100%;border-radius:14px;border:1px solid #4a3508}
-.tgbox{margin-top:25px;text-align:center;padding:22px;border-radius:18px;border:1px solid #5a4109;background:linear-gradient(145deg,#17120a,#0b0b0b)}
-.tgbox p{color:#aaa}
-footer{text-align:center;color:#777;font-size:12px;padding:25px;border-top:1px solid #211a09}
-.disclaimer{max-width:900px;margin:15px auto 0;color:#777;font-size:11px;line-height:1.5}
-@media(max-width:800px){
-  .games{grid-template-columns:repeat(2,1fr)}
-  .gallery{grid-template-columns:repeat(2,1fr)}
-  .stats{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:430px){
-  .brand{font-size:18px}.tg{padding:8px 10px;font-size:12px}
-  .games{gap:10px}.game{padding:11px}.logo{width:70px;height:70px}
-  .game h3{font-size:16px}.btn{font-size:12px}
-}
+*{box-sizing:border-box}body{margin:0;background:#070707;color:#fff;font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1100px;margin:auto;padding:0 14px}
+header{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.96);border-bottom:1px solid #6f4c13;backdrop-filter:blur(8px)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:900;letter-spacing:1.5px;color:#ffd45a;font-size:20px}.brand small{display:block;color:#aaa;font-size:9px;letter-spacing:3px;margin-top:3px}
+.telegram{background:linear-gradient(135deg,#ffe58b,#d89c18);color:#111;padding:12px 18px;border-radius:25px;font-weight:800;font-size:13px}
+.hero{margin:18px 0;padding:38px 22px;border:1px solid #8b6118;border-radius:25px;background:radial-gradient(circle at 75% 25%,#5a3b0d 0,#181007 35%,#080808 70%);box-shadow:0 0 35px rgba(221,166,40,.12)}
+.crown{font-size:42px}.hero h1{margin:8px 0;font-size:clamp(32px,7vw,62px);line-height:1;color:#ffd85f;text-shadow:0 0 18px #9a6b13}.hero p{color:#ddd;max-width:650px;line-height:1.6}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.chip{border:1px solid #765317;border-radius:30px;padding:8px 12px;color:#f5d47c;background:#100e0a;font-size:12px}
+h2{text-align:center;color:#ffd65e;font-size:30px;margin:35px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{position:relative;background:linear-gradient(145deg,#171717,#0d0d0d);border:1px solid #6b4c18;border-radius:20px;padding:18px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.badge{position:absolute;left:10px;top:10px;background:#17120a;border:1px solid #d9a62c;color:#ffd85f;border-radius:9px;padding:5px 7px;font-size:10px;font-weight:900}
+.logo{width:82px;height:82px;margin:8px auto 10px;border-radius:50%;border:2px solid #dca82f;display:flex;align-items:center;justify-content:center;background:#050505;color:#fff;font-weight:900;font-size:20px;box-shadow:0 0 18px rgba(235,181,57,.18)}
+.name{font-size:22px;font-weight:900}.stars{color:#ffd44f;letter-spacing:3px;margin:7px}.sub{color:#aaa;font-size:12px}.play{display:block;margin-top:13px;padding:12px;border-radius:12px;background:linear-gradient(135deg,#ffe36b,#d89b18);color:#111;font-weight:900}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.box{background:#111;border:1px solid #513c18;border-radius:18px;padding:18px}.box h3{color:#ffd65e;margin:0 0 10px}.box p{color:#ddd;line-height:1.6;margin:7px 0}.amount{font-size:25px;color:#ffe07a;font-weight:900}
+.reward{margin:22px 0;padding:22px;border:1px solid #704b13;border-radius:20px;background:linear-gradient(120deg,#160d06,#111)}
+.reward-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.reward-item{text-align:center;padding:15px;border-radius:14px;background:#0b0b0b;border:1px solid #4c3919}.reward-item b{display:block;color:#ffd85f;font-size:23px;margin-bottom:5px}
+footer{margin-top:30px;padding:24px 0 35px;border-top:1px solid #3d2d15;text-align:center;color:#999;font-size:12px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:50;padding:20px}.modal.open{display:flex;align-items:center;justify-content:center}.panel{width:min(480px,100%);background:#111;border:1px solid #b37b18;border-radius:22px;padding:22px;box-shadow:0 0 50px #000}.panel h3{color:#ffd85f;font-size:27px;margin-top:0}.close{float:right;border:0;background:#2b2111;color:#ffd85f;border-radius:10px;padding:7px 10px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:650px){.info,.reward-grid{grid-template-columns:1fr}.nav{height:62px}.brand{font-size:16px}.telegram{padding:10px 12px;font-size:11px}.hero{padding:30px 18px}}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="nav">
-    <div class="brand">👑 VIP GAMING ZONE<small>PREMIUM GAME DIRECTORY</small></div>
-    <a class="tg" href="https://t.me/+10oVqeoJfLk0ZWVl" target="_blank" rel="noopener">✈ JOIN TELEGRAM</a>
-  </div>
-</header>
+<header><div class="wrap nav"><div class="brand">👑 VIP GAMING ZONE<small>PREMIUM GAME DIRECTORY</small></div><a class="telegram" href="https://t.me/+10oVqeoJfLk0ZWVl" target="_blank">✈ JOIN TELEGRAM</a></div></header>
 
 <main class="wrap">
-  <section class="hero">
-    <img src="assets/vip-banner.png" alt="VIP Gaming Zone">
-    <div class="heroNote">Eight gaming platforms • Tap any game to open its official link</div>
-  </section>
+<section class="hero">
+  <div class="crown">👑</div><h1>PLAY VIP GAMES</h1>
+  <p>Explore the game collection in one premium, mobile-friendly website. Tap a game to view its details and open its supplied link.</p>
+  <div class="chips"><span class="chip">★ VIP COLLECTION</span><span class="chip">⚡ FAST ACCESS</span><span class="chip">🎁 BONUS INFO</span><span class="chip">🔞 18+ ONLY</span></div>
+</section>
 
-  <h2>👑 VIP GAME COLLECTION</h2>
-  <section class="games">
-    <article class="game"><img class="logo" src="assets/iv7-vip.png" alt="IV7"><h3>IV7</h3><div class="vip">★ VIP PLATFORM ★</div><a class="btn" href="https://share-rxapq9cajg.iv7.info/share/agent/SS0RWDXH?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=" target="_blank" rel="noopener">PLAY NOW</a></article>
-    <article class="game"><img class="logo" src="assets/in7-vip.png" alt="IN7"><h3>IN7</h3><div class="vip">★ VIP PLATFORM ★</div><a class="btn" href="https://share.in7game.org/share/agent/SS6BEVSR?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=" target="_blank" rel="noopener">PLAY NOW</a></article>
-    <article class="game"><img class="logo" src="assets/ix7-vip.png" alt="IX7"><h3>IX7</h3><div class="vip">★ VIP PLATFORM ★</div><a class="btn" href="https://share.ix7game.org/share/agent/SS6JSE2X?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=" target="_blank" rel="noopener">PLAY NOW</a></article>
-    <article class="game"><img class="logo" src="assets/ic7-vip.png" alt="IC7"><h3>IC7</h3><div class="vip">★ VIP PLATFORM ★</div><a class="btn" href="https://share-xwvr4r1pxs.ic7game.org/share/agent/SD6SZR9M?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=" target="_blank" rel="noopener">PLAY NOW</a></article>
-    <article class="game"><img class="logo" src="assets/benz-vip.png" alt="Benz"><h3>Benz</h3><div class="vip">★ VIP PLATFORM ★</div><a class="btn" href="https://share-rxapq9cajg.benzgame.org/share/agent/SS6M5YN7?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=" target="_blank" rel="noopener">PLAY NOW</a></article>
-    <article class="game"><img class="logo" src="assets/ek1-vip.png" alt="EK1"><h3>EK1</h3><div class="vip">★ VIP PLATFORM ★</div><a class="btn" href="https://share-3udmeubykd.ek1game.com/share/agent/SD6P45WR?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=" target="_blank" rel="noopener">PLAY NOW</a></article>
-    <article class="game"><img class="logo" src="assets/raja7-vip.png" alt="Raja7"><h3>Raja7</h3><div class="vip">★ VIP PLATFORM ★</div><a class="btn" href="https://share-rxapq9cajg.raja7.org/share/agent/SS6JSJBY?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=" target="_blank" rel="noopener">PLAY NOW</a></article>
-    <article class="game"><img class="logo" src="assets/mgm-vip.png" alt="MGM"><h3>MGM</h3><div class="vip">★ VIP PLATFORM ★</div><a class="btn" href="https://share-vrc8yh3wkw.mgmgame.org/share/agent/SS0BCQBT?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=" target="_blank" rel="noopener">PLAY NOW</a></article>
-  </section>
+<h2>👑 OUR VIP GAMES</h2>
+<section class="grid">
+  <article class="card"><span class="badge">VIP</span><div class="logo">IV7</div><div class="name">IV7</div><div class="stars">★★★★★</div><div class="sub">VIP PLATFORM</div><button class="play" onclick="showGame('IV7','₹37','₹100','₹110','Game details available after opening the platform.')">VIEW & PLAY</button></article>
+  <article class="card"><span class="badge">VIP</span><div class="logo">IN7</div><div class="name">IN7</div><div class="stars">★★★★★</div><div class="sub">VIP PLATFORM</div><button class="play" onclick="showGame('IN7','₹37','₹100','₹110','Game details available after opening the platform.')">VIEW & PLAY</button></article>
+  <article class="card"><span class="badge">VIP</span><div class="logo">IX7</div><div class="name">IX7</div><div class="stars">★★★★★</div><div class="sub">VIP PLATFORM</div><button class="play" onclick="showGame('IX7','₹37','₹100','₹110','Game details available after opening the platform.')">VIEW & PLAY</button></article>
+  <article class="card"><span class="badge">VIP</span><div class="logo">IC7</div><div class="name">IC7</div><div class="stars">★★★★★</div><div class="sub">VIP PLATFORM</div><button class="play" onclick="showGame('IC7','₹37','₹100','₹110','Game details available after opening the platform.')">VIEW & PLAY</button></article>
+  <article class="card"><span class="badge">VIP</span><div class="logo">BENZ</div><div class="name">Benz</div><div class="stars">★★★★★</div><div class="sub">VIP PLATFORM</div><button class="play" onclick="showGame('Benz','₹37','₹100','₹110','Game details available after opening the platform.')">VIEW & PLAY</button></article>
+  <article class="card"><span class="badge">VIP</span><div class="logo">EK1</div><div class="name">EK1</div><div class="stars">★★★★★</div><div class="sub">VIP PLATFORM</div><button class="play" onclick="showGame('EK1','₹37','₹100','₹110','Game details available after opening the platform.')">VIEW & PLAY</button></article>
+  <article class="card"><span class="badge">VIP</span><div class="logo">RAJA7</div><div class="name">Raja7</div><div class="stars">★★★★★</div><div class="sub">VIP PLATFORM</div><button class="play" onclick="showGame('Raja7','₹37','₹100','₹110','Game details available after opening the platform.')">VIEW & PLAY</button></article>
+  <article class="card"><span class="badge">VIP</span><div class="logo">MGM</div><div class="name">MGM</div><div class="stars">★★★★★</div><div class="sub">VIP PLATFORM</div><button class="play" onclick="showGame('MGM','₹37','₹100','₹110','Game details available after opening the platform.')">VIEW & PLAY</button></article>
+</section>
 
-  <section class="details">
-    <h2>🎁 COMMON OFFER DETAILS</h2>
-    <div class="stats">
-      <div class="stat"><b>₹37</b><span>Starting Bonus</span></div>
-      <div class="stat"><b>₹100</b><span>Minimum Deposit</span></div>
-      <div class="stat"><b>₹110</b><span>Minimum Withdrawal</span></div>
-      <div class="stat"><b>Bank</b><span>Withdrawal Method</span></div>
-    </div>
-    <div class="offer">
-      <strong>Deposit examples:</strong> ₹100 deposit → ₹37 bonus &nbsp; • &nbsp; ₹200 deposit → ₹80 bonus.
-      <br><small>Offers can change by platform. Check the selected platform's current terms before depositing.</small>
-    </div>
-  </section>
+<section class="info">
+ <div class="box"><h3>🎁 BONUS</h3><p>Example joining bonus</p><div class="amount">₹37</div><p>on ₹100 deposit*</p></div>
+ <div class="box"><h3>💰 DEPOSIT</h3><p>Minimum deposit</p><div class="amount">₹100</div><p>Bonus can vary by platform.</p></div>
+ <div class="box"><h3>💸 WITHDRAWAL</h3><p>Minimum shown</p><div class="amount">₹110</div><p>Check the platform's current rules.</p></div>
+</section>
 
-  <section class="details">
-    <h2>🎮 GAME DETAILS & RULES</h2>
-    <div class="gallery">
-      <img src="assets/details-1.jpg" alt="Game rules and rewards">
-      <img src="assets/details-2.jpg" alt="Joining and building rewards">
-      <img src="assets/details-3.jpg" alt="Agent jackpot rules">
-      <img src="assets/details-4.jpg" alt="Team classification rules">
-    </div>
-  </section>
+<section class="reward"><h2 style="margin-top:0">🏆 REWARD HIGHLIGHTS</h2><div class="reward-grid">
+ <div class="reward-item"><b>₹80</b>Example joining reward</div>
+ <div class="reward-item"><b>0.60%</b>Example rebate rate</div>
+ <div class="reward-item"><b>1.50%</b>Example top-up rate</div>
+</div></section>
 
-  <section class="tgbox">
-    <h2>✈️ JOIN OUR TELEGRAM</h2>
-    <p>Latest updates and announcements.</p>
-    <a class="tg" href="https://t.me/+10oVqeoJfLk0ZWVl" target="_blank" rel="noopener">JOIN TELEGRAM</a>
-  </section>
+<footer>🔞 18+ only. Play responsibly. Financial risk may apply. Bonus and withdrawal terms can change; verify the current terms on the platform before depositing. <br><br>© VIP Gaming Zone</footer>
 </main>
 
-<footer>
-  © 2026 VIP Gaming Zone
-  <div class="disclaimer">
-    18+ only where legally applicable. Real-money gaming may be restricted or prohibited in some locations.
-    Check the applicable laws, age requirements, and each platform's terms before using any service.
-    Bonus, deposit, withdrawal and reward information may change; verify current terms on the platform.
-  </div>
-</footer>
-</body>
-</html>
+<div id="modal" class="modal"><div class="panel"><button class="close" onclick="closeGame()">✕</button><h3 id="mname"></h3><p>🎁 Bonus: <b id="mbonus"></b></p><p>💰 Minimum Deposit: <b id="mdep"></b></p><p>💸 Minimum Withdrawal: <b id="mwd"></b></p><p id="mdetail"></p><p style="color:#999;font-size:12px">Verify current terms on the platform before making any payment.</p><a id="mlink" class="play" target="_blank">OPEN PLATFORM</a></div></div>
+<script>
+const links={
+IV7:"https://share-rxapq9cajg.iv7.info/share/agent/SS0RWDXH?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
+IN7:"https://share.in7game.org/share/agent/SS6BEVSR?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
+IX7:"https://share.ix7game.org/share/agent/SS6JSE2X?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
+IC7:"https://share-xwvr4r1pxs.ic7game.org/share/agent/SD6SZR9M?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
+Benz:"https://share-rxapq9cajg.benzgame.org/share/agent/SS6M5YN7?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
+EK1:"https://share-3udmeubykd.ek1game.com/share/agent/SD6P45WR?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
+Raja7:"https://share-rxapq9cajg.raja7.org/share/agent/SS6JSJBY?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
+MGM:"https://share-vrc8yh3wkw.mgmgame.org/share/agent/SS0BCQBT?data=eyJtIjoxLCJsYW5nIjoiZW4iLCJpZCI6MX0="
+};
+function showGame(n,b,d,w,detail){mname.textContent=n+" — VIP Details";mbonus.textContent=b;mdep.textContent=d;mwd.textContent=w;mdetail.textContent=detail;mlink.href=links[n]||"#";modal.classList.add("open")}
+function closeGame(){modal.classList.remove("open")}
+</script>
+</body></html>
