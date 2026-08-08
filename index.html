@@ -1,125 +1,316 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Game Directory</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>VIP Gaming Zone</title>
 
-    body {
-      margin: 0;
-      background: #050505;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+}
 
-    header {
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #8b650d;
-    }
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 50% 0%,#3b2900 0%,transparent 35%),
+    linear-gradient(180deg,#080808,#020202);
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+}
 
-    h1 {
-      color: #ffdf72;
-      margin: 0;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(5,5,5,.96);
+  border-bottom:1px solid #80600d;
+  padding:13px;
+}
 
-    .games {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 15px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
 
-    .game {
-      text-align: center;
-      padding: 25px;
-      border: 1px solid #8b650d;
-      border-radius: 18px;
-      background: #101010;
-    }
+.brand{
+  color:#ffdf72;
+  font-size:21px;
+  font-weight:900;
+}
 
-    .logo {
-      width: 110px;
-      height: 110px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 15px;
-      border-radius: 50%;
-    }
+.brand small{
+  display:block;
+  color:#999;
+  font-size:9px;
+  letter-spacing:3px;
+  margin-top:3px;
+}
 
-    h2 {
-      color: #ffdf72;
-    }
+.telegram{
+  text-decoration:none;
+  color:#111;
+  background:linear-gradient(90deg,#c9941a,#ffe47d,#c9941a);
+  padding:10px 15px;
+  border-radius:30px;
+  font-weight:900;
+}
 
-    @media (max-width: 600px) {
-      .games {
-        grid-template-columns: 1fr 1fr;
-      }
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:15px;
+}
 
-      .logo {
-        width: 85px;
-        height: 85px;
-      }
-    }
-  </style>
+.hero{
+  overflow:hidden;
+  border:1px solid #80600d;
+  border-radius:22px;
+  background:#090909;
+  box-shadow:0 15px 45px #000;
+}
+
+.hero img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.hero-text{
+  text-align:center;
+  padding:14px;
+  color:#bbb;
+}
+
+h2{
+  text-align:center;
+  color:#ffdf72;
+  margin:28px 0 16px;
+}
+
+.games{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.game{
+  text-align:center;
+  padding:15px;
+  border-radius:18px;
+  border:1px solid #574108;
+  background:linear-gradient(145deg,#181818,#090909);
+  box-shadow:0 10px 30px #000;
+  transition:.25s;
+}
+
+.game:hover{
+  transform:translateY(-5px);
+  border-color:#f6c84a;
+}
+
+.logo{
+  width:90px;
+  height:90px;
+  object-fit:contain;
+  background:#050505;
+  border:2px solid #f6c84a;
+  border-radius:20px;
+  padding:5px;
+}
+
+.game h3{
+  margin:10px 0 5px;
+  font-size:19px;
+}
+
+.vip{
+  color:#ffdf72;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-bottom:12px;
+}
+
+.details-btn{
+  border:0;
+  width:100%;
+  cursor:pointer;
+  padding:11px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#c9941a,#ffe47d,#c9941a);
+  color:#111;
+  font-weight:900;
+}
+
+.info{
+  display:none;
+  margin-top:12px;
+  padding:12px;
+  background:#111;
+  border:1px solid #493506;
+  border-radius:12px;
+  color:#bbb;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.info.active{
+  display:block;
+}
+
+.telegram-box{
+  margin-top:30px;
+  padding:25px;
+  text-align:center;
+  border:1px solid #604808;
+  border-radius:20px;
+  background:linear-gradient(145deg,#171209,#090909);
+}
+
+footer{
+  text-align:center;
+  color:#666;
+  padding:30px 15px;
+  font-size:12px;
+  border-top:1px solid #211a09;
+  margin-top:30px;
+}
+
+@media(max-width:800px){
+  .games{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:430px){
+  .brand{
+    font-size:17px;
+  }
+
+  .telegram{
+    padding:8px 10px;
+    font-size:11px;
+  }
+
+  .game{
+    padding:10px;
+  }
+
+  .logo{
+    width:72px;
+    height:72px;
+  }
+
+  .game h3{
+    font-size:16px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>👑 GAME DIRECTORY</h1>
+  <div class="nav">
+
+    <div class="brand">
+      👑 VIP GAMING ZONE
+      <small>PREMIUM GAME DIRECTORY</small>
+    </div>
+
+    <a class="telegram"
+       href="https://t.me/+10oVqeoJfLk0ZWVl"
+       target="_blank">
+       ✈ JOIN TELEGRAM
+    </a>
+
+  </div>
 </header>
 
-<main class="games">
 
-  <div class="game">
-    <img class="logo" src="./iv7-vip.png" alt="IV7 logo">
-    <h2>IV7</h2>
-  </div>
+<main class="container">
 
-  <div class="game">
-    <img class="logo" src="./in7-vip.png" alt="IN7 logo">
-    <h2>IN7</h2>
-  </div>
+  <!-- HOME -->
+  <section class="hero">
 
-  <div class="game">
-    <img class="logo" src="./ix7-vip.png" alt="IX7 logo">
-    <h2>IX7</h2>
-  </div>
+    <!-- Upload home-vip-poster.jpg in same folder as index.html -->
+    <img src="home-vip-poster.jpg"
+         alt="VIP Gaming Zone">
 
-  <div class="game">
-    <img class="logo" src="./ic7-vip.png" alt="IC7 logo">
-    <h2>IC7</h2>
-  </div>
+    <div class="hero-text">
+      🎮 Explore our featured gaming platforms
+    </div>
 
-  <div class="game">
-    <img class="logo" src="./benz-vip.png" alt="Benz logo">
-    <h2>Benz</h2>
-  </div>
+  </section>
 
-  <div class="game">
-    <img class="logo" src="./ek1-vip.png" alt="EK1 logo">
-    <h2>EK1</h2>
-  </div>
 
-  <div class="game">
-    <img class="logo" src="./raja7-vip.png" alt="Raja7 logo">
-    <h2>Raja7</h2>
-  </div>
+  <h2>👑 VIP GAME COLLECTION</h2>
 
-  <div class="game">
-    <img class="logo" src="./mgm-vip.png" alt="MGM logo">
-    <h2>MGM</h2>
-  </div>
 
-</main>
+  <section class="games">
 
-</body>
-</html>
+
+    <!-- IV7 -->
+    <article class="game">
+
+      <img class="logo"
+           src="iv7-vip.png"
+           alt="IV7">
+
+      <h3>IV7</h3>
+
+      <div class="vip">
+        ★ VIP PLATFORM ★
+      </div>
+
+      <button class="details-btn"
+              onclick="showInfo('iv7')">
+        VIEW DETAILS
+      </button>
+
+      <div id="iv7" class="info">
+        🎮 Featured gaming platform<br>
+        ⭐ VIP collection entry<br>
+        📱 Mobile friendly
+      </div>
+
+    </article>
+
+
+    <!-- IN7 -->
+    <article class="game">
+
+      <img class="logo"
+           src="in7-vip.png"
+           alt="IN7">
+
+      <h3>IN7</h3>
+
+      <div class="vip">
+        ★ VIP PLATFORM ★
+      </div>
+
+      <button class="details-btn"
+              onclick="showInfo('in7')">
+        VIEW DETAILS
+      </button>
+
+      <div id="in7" class="info">
+        🎮 Featured gaming platform<br>
+        ⭐ VIP collection entry<br>
+        📱 Mobile friendly
+      </div>
+
+    </article>
+
+
+    <!-- IX7 -->
+    <article class="game">
+
+      <img class="logo"
+          
